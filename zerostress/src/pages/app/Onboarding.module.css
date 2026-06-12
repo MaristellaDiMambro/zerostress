@@ -1,0 +1,66 @@
+.wrap {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 24px 0 40px;
+  min-height: calc(100vh - 220px);
+  justify-content: center;
+}
+
+.greeting { margin-bottom: 40px; animation: fadeUp .4s ease; }
+.wave {
+  font-size: 2.6rem; display: inline-block;
+  animation: wave 1.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(18deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+}
+.greeting h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 12px 0 8px; }
+.greeting p { color: var(--text-dim); font-weight: 600; font-size: 1rem; max-width: 380px; margin: 0 auto; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; width: 100%; max-width: 560px; margin-bottom: 28px;
+}
+
+.card {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  background: var(--card); border: 3px solid rgba(255,255,255,0.06);
+  border-radius: 20px; padding: 28px 12px;
+  cursor: pointer; transition: all .25s;
+  font-family: 'Nunito', sans-serif;
+  animation: fadeUp .4s ease both;
+}
+.card:nth-child(1) { animation-delay: .02s; }
+.card:nth-child(2) { animation-delay: .06s; }
+.card:nth-child(3) { animation-delay: .1s; }
+.card:nth-child(4) { animation-delay: .14s; }
+.card:nth-child(5) { animation-delay: .18s; }
+.card:nth-child(6) { animation-delay: .22s; }
+
+.card:hover:not(:disabled), .card:active:not(:disabled) {
+  transform: translateY(-6px) scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.card:disabled { opacity: 0.5; cursor: wait; }
+
+.emoji { font-size: 2.6rem; }
+.label { font-weight: 800; font-size: 0.95rem; }
+
+.skip {
+  background: none; border: none; color: var(--text-dim);
+  font-weight: 700; font-size: 0.88rem; cursor: pointer;
+  text-decoration: underline; transition: color .2s;
+  font-family: 'Nunito', sans-serif;
+}
+.skip:hover:not(:disabled) { color: var(--text); }
+.skip:disabled { opacity: 0.5; cursor: wait; }
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(2, 1fr); max-width: 340px; }
+  .emoji { font-size: 2.2rem; }
+}

@@ -1,0 +1,156 @@
+.landing { min-height: 100vh; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(15,14,23,0.92); backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(255,255,255,0.07);
+  padding: 0 32px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.navLogo {
+  font-family: 'Baloo 2', cursive; font-size: 1.3rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.navLinks {
+  display: flex; align-items: center; gap: 20px;
+}
+.navLinks a {
+  color: var(--text-dim); text-decoration: none;
+  font-weight: 700; font-size: 0.9rem; transition: color .2s;
+}
+.navLinks a:hover { color: var(--text); }
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 24px 60px; position: relative; overflow: hidden;
+}
+.heroBg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(6,214,160,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(67,97,238,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(255,77,141,0.1) 0%, transparent 50%);
+}
+.heroContent { position: relative; z-index: 1; max-width: 720px; }
+.heroBadge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--orange), var(--pink));
+  color: white; font-weight: 800; font-size: 0.78rem;
+  padding: 6px 18px; border-radius: 30px; margin-bottom: 24px;
+  letter-spacing: 1px; text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.heroTitle {
+  font-family: 'Baloo 2', cursive; font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 800; line-height: 0.95; margin-bottom: 20px;
+}
+.titleZero {
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.titleStress {
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.heroSub {
+  font-size: 1.15rem; color: var(--text-dim); font-weight: 600;
+  max-width: 540px; margin: 0 auto 28px; line-height: 1.6;
+}
+.heroPills {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 36px;
+}
+.pill {
+  background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 30px; padding: 8px 18px; font-weight: 700; font-size: 0.88rem;
+}
+.heroCtas {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+.float {
+  position: absolute; font-size: 2.4rem; pointer-events: none; z-index: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 90px 24px; max-width: 1100px; margin: 0 auto;
+}
+.sectionHeader { text-align: center; margin-bottom: 52px; }
+.sectionTitle {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+/* ── Features ── */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.featureCard {
+  background: var(--card); border-radius: 20px; padding: 28px;
+  border: 2px solid rgba(255,255,255,0.06);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  border-color: var(--accent, rgba(255,255,255,0.15));
+}
+.featureIcon { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+.featureCard h3 { font-family: 'Baloo 2', cursive; font-size: 1.2rem; margin-bottom: 8px; }
+.featureCard p { color: var(--text-dim); font-size: 0.9rem; font-weight: 600; line-height: 1.55; }
+
+/* ── Steps ── */
+.stepsRow {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px; max-width: 800px; margin: 0 auto;
+}
+.stepCard {
+  background: var(--card); border-radius: 20px; padding: 32px 24px;
+  text-align: center; border: 2px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+.stepNum {
+  position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1rem; color: var(--bg);
+}
+.stepIcon { font-size: 2.4rem; margin: 8px 0 12px; display: block; }
+.stepCard h3 { font-family: 'Baloo 2', cursive; font-size: 1.2rem; margin-bottom: 8px; }
+.stepCard p { color: var(--text-dim); font-size: 0.88rem; font-weight: 600; line-height: 1.5; }
+
+/* ── CTA bottom ── */
+.ctaBottom { padding: 40px 24px 80px; }
+.ctaCard {
+  max-width: 680px; margin: 0 auto; text-align: center;
+  background: linear-gradient(135deg, rgba(6,214,160,0.15), rgba(23,195,178,0.1));
+  border: 2px solid rgba(6,214,160,0.3); border-radius: 28px; padding: 56px 40px;
+}
+.ctaCard h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 12px; }
+.ctaCard p { color: var(--text-dim); font-weight: 600; margin-bottom: 28px; font-size: 1rem; }
+
+/* ── Footer ── */
+.footer {
+  background: var(--card2); padding: 36px 24px; text-align: center;
+  border-top: 2px solid rgba(255,255,255,0.06);
+}
+.footerLogo {
+  font-family: 'Baloo 2', cursive; font-size: 1.5rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.footer p { color: var(--text-dim); font-size: 0.88rem; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .navLinks a:not(.btn) { display: none; }
+  .heroCtas { flex-direction: column; align-items: center; }
+}
